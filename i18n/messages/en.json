@@ -1,0 +1,82 @@
+{
+  "navigation": {
+    "home": "Home",
+    "services": "Services",
+    "about": "About",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "reviews": "Reviews"
+  },
+  "home": {
+    "hero": {
+      "title": "Get Your Loved Ones Home",
+      "subtitle": "Fast, Professional, Reliable Bail Bond Services",
+      "cta": "Get Help Now",
+      "call": "Call 24/7"
+    },
+    "trust": {
+      "title": "Why Choose Imperium Bail Bonds",
+      "experience": "Years of Experience",
+      "available": "24/7 Availability",
+      "confidential": "Confidential Service",
+      "professional": "Professional Team"
+    },
+    "services": {
+      "title": "Our Services",
+      "subtitle": "Comprehensive bail bond solutions for every situation"
+    }
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Professional bail bond services tailored to your needs"
+  },
+  "about": {
+    "title": "About Imperium Bail Bonds",
+    "subtitle": "Our Mission is Family Reunification"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Find answers to common questions about bail bonds"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "We're here to help 24/7",
+    "form": {
+      "name": "Full Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "message": "How can we help?",
+      "submit": "Send Message",
+      "sending": "Sending...",
+      "success": "Message sent successfully! We'll contact you soon.",
+      "error": "Failed to send message. Please call us directly."
+    },
+    "info": {
+      "phone": "Phone",
+      "email": "Email",
+      "address": "Address",
+      "hours": "Hours"
+    }
+  },
+  "reviews": {
+    "title": "Customer Reviews",
+    "subtitle": "See what our clients say about us",
+    "rating": "Rating"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "readMore": "Read More",
+    "learnMore": "Learn More",
+    "callNow": "Call Now",
+    "getStarted": "Get Started"
+  },
+  "footer": {
+    "tagline": "Professional bail bond services helping families reunite",
+    "quickLinks": "Quick Links",
+    "contactInfo": "Contact Information",
+    "followUs": "Follow Us",
+    "copyright": "© 2025 Imperium Bail Bonds. All rights reserved.",
+    "emergency": "24/7 Emergency Service Available"
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "navigation": {
+    "home": "Inicio",
+    "services": "Servicios",
+    "about": "Nosotros",
+    "faq": "Preguntas Frecuentes",
+    "contact": "Contacto",
+    "reviews": "Reseñas"
+  },
+  "home": {
+    "hero": {
+      "title": "Lleva a Tus Seres Queridos a Casa",
+      "subtitle": "Servicios de Fianzas Rápidos, Profesionales y Confiables",
+      "cta": "Obtener Ayuda Ahora",
+      "call": "Llamar 24/7"
+    },
+    "trust": {
+      "title": "Por Qué Elegir Imperium Bail Bonds",
+      "experience": "Años de Experiencia",
+      "available": "Disponibilidad 24/7",
+      "confidential": "Servicio Confidencial",
+      "professional": "Equipo Profesional"
+    },
+    "services": {
+      "title": "Nuestros Servicios",
+      "subtitle": "Soluciones integrales de fianzas para cada situación"
+    }
+  },
+  "services": {
+    "title": "Nuestros Servicios",
+    "subtitle": "Servicios profesionales de fianzas adaptados a sus necesidades"
+  },
+  "about": {
+    "title": "Acerca de Imperium Bail Bonds",
+    "subtitle": "Nuestra Misión es la Reunificación Familiar"
+  },
+  "faq": {
+    "title": "Preguntas Frecuentes",
+    "subtitle": "Encuentre respuestas a preguntas comunes sobre fianzas"
+  },
+  "contact": {
+    "title": "Contáctenos",
+    "subtitle": "Estamos aquí para ayudar 24/7",
+    "form": {
+      "name": "Nombre Completo",
+      "email": "Correo Electrónico",
+      "phone": "Número de Teléfono",
+      "message": "¿Cómo podemos ayudarle?",
+      "submit": "Enviar Mensaje",
+      "sending": "Enviando...",
+      "success": "¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.",
+      "error": "Error al enviar el mensaje. Por favor, llámenos directamente."
+    },
+    "info": {
+      "phone": "Teléfono",
+      "email": "Correo Electrónico",
+      "address": "Dirección",
+      "hours": "Horario"
+    }
+  },
+  "reviews": {
+    "title": "Reseñas de Clientes",
+    "subtitle": "Vea lo que nuestros clientes dicen sobre nosotros",
+    "rating": "Calificación"
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error": "Ocurrió un error",
+    "readMore": "Leer Más",
+    "learnMore": "Saber Más",
+    "callNow": "Llamar Ahora",
+    "getStarted": "Comenzar"
+  },
+  "footer": {
+    "tagline": "Servicios profesionales de fianzas ayudando a reunir familias",
+    "quickLinks": "Enlaces Rápidos",
+    "contactInfo": "Información de Contacto",
+    "followUs": "Síguenos",
+    "copyright": "© 2025 Imperium Bail Bonds. Todos los derechos reservados.",
+    "emergency": "Servicio de Emergencia 24/7 Disponible"
+  }
+}
