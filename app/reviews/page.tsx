@@ -53,14 +53,15 @@ export default function ReviewsPage() {
   }
 
   return (
-    <div className="py-16">
+    <div className="py-16 bg-trust-cream">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="font-heading font-bold text-4xl md:text-5xl mb-4 text-primary-900">
             {t('title')}
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <div className="w-24 h-0.5 bg-accent-500 mx-auto mb-4"></div>
+          <p className="text-xl text-trust-charcoal max-w-3xl mx-auto">
             {t('subtitle')}
           </p>
         </div>
@@ -68,25 +69,25 @@ export default function ReviewsPage() {
         {/* Featured Reviews */}
         {featuredReviews.length > 0 && (
           <div className="mb-16">
-            <h2 className="font-heading font-bold text-2xl mb-8 text-center text-primary-800">
+            <h2 className="font-heading font-bold text-2xl mb-8 text-center text-primary-900">
               Featured Reviews
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {featuredReviews.map((review: any) => (
                 <div
                   key={review._id}
-                  className="bg-gradient-to-br from-primary-50 to-white p-6 rounded-lg shadow-lg border-2 border-accent-300"
+                  className="bg-white p-6 rounded-lg shadow-gold border-2 border-accent-500"
                 >
                   <div className="flex items-center justify-between mb-4">
                     {renderStars(review.rating)}
-                    <span className="text-sm text-gray-500">
+                    <span className="text-sm text-trust-charcoal">
                       {new Date(review.date).toLocaleDateString()}
                     </span>
                   </div>
-                  <p className="text-gray-700 mb-4 italic">
+                  <p className="text-trust-charcoal mb-4 italic">
                     "{review.review?.en || review.review}"
                   </p>
-                  <p className="font-semibold text-primary-800">
+                  <p className="font-heading font-semibold text-primary-900">
                     - {review.customerName}
                   </p>
                 </div>
@@ -98,25 +99,25 @@ export default function ReviewsPage() {
         {/* All Reviews */}
         {regularReviews.length > 0 && (
           <div className="max-w-5xl mx-auto">
-            <h2 className="font-heading font-bold text-2xl mb-8 text-center text-primary-800">
+            <h2 className="font-heading font-bold text-2xl mb-8 text-center text-primary-900">
               All Reviews
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
               {regularReviews.map((review: any) => (
                 <div
                   key={review._id}
-                  className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+                  className="bg-white p-6 rounded-lg border border-accent-500/20 shadow-elegant hover:shadow-gold transition-all"
                 >
                   <div className="flex items-center justify-between mb-3">
                     {renderStars(review.rating)}
-                    <span className="text-sm text-gray-500">
+                    <span className="text-sm text-trust-charcoal">
                       {new Date(review.date).toLocaleDateString()}
                     </span>
                   </div>
-                  <p className="text-gray-700 mb-3">
+                  <p className="text-trust-charcoal mb-3">
                     "{review.review?.en || review.review}"
                   </p>
-                  <p className="font-semibold text-primary-700">
+                  <p className="font-heading font-semibold text-primary-900">
                     - {review.customerName}
                   </p>
                 </div>
@@ -126,24 +127,25 @@ export default function ReviewsPage() {
         )}
 
         {reviews.length === 0 && (
-          <div className="text-center py-12 bg-white rounded-lg shadow">
-            <p className="text-gray-600 mb-4">
+          <div className="text-center py-12 bg-white rounded-lg border border-accent-500/20 shadow-elegant">
+            <p className="text-trust-charcoal mb-4">
               No reviews available yet. Please add reviews in the CMS.
             </p>
           </div>
         )}
 
         {/* CTA */}
-        <div className="max-w-4xl mx-auto mt-16 bg-primary-700 text-white rounded-lg p-8 text-center">
+        <div className="max-w-4xl mx-auto mt-16 bg-gradient-to-br from-primary-900 to-trust-charcoal text-trust-cream rounded-lg p-8 text-center border border-accent-500/30 shadow-gold">
+          <div className="w-16 h-0.5 bg-accent-500 mx-auto mb-4"></div>
           <h2 className="font-heading font-bold text-2xl mb-4">
             Experience Our Service
           </h2>
-          <p className="text-lg mb-6">
+          <p className="text-lg mb-6 text-trust-offWhite">
             Join hundreds of satisfied families. Contact us today for professional bail bond services.
           </p>
           <a
             href="/contact"
-            className="inline-block bg-accent-500 hover:bg-accent-600 text-white font-bold px-8 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all"
+            className="inline-block bg-accent-500 hover:bg-accent-600 text-primary-900 font-bold px-8 py-3 rounded-lg shadow-gold hover:shadow-xl transition-all"
           >
             Get Started
           </a>

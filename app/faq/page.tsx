@@ -37,14 +37,15 @@ export default function FAQPage() {
     : faqs.filter((faq: any) => faq.category === selectedCategory)
 
   return (
-    <div className="py-16">
+    <div className="py-16 bg-trust-cream">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="font-heading font-bold text-4xl md:text-5xl mb-4 text-primary-900">
             {t('title')}
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <div className="w-24 h-0.5 bg-accent-500 mx-auto mb-4"></div>
+          <p className="text-xl text-trust-charcoal max-w-3xl mx-auto">
             {t('subtitle')}
           </p>
         </div>
@@ -57,8 +58,8 @@ export default function FAQPage() {
               onClick={() => setSelectedCategory(category)}
               className={`px-6 py-2 rounded-full font-medium transition-all ${
                 selectedCategory === category
-                  ? 'bg-primary-600 text-white shadow-lg'
-                  : 'bg-white text-gray-700 hover:bg-gray-100 shadow'
+                  ? 'bg-accent-500 text-primary-900 shadow-gold'
+                  : 'bg-white text-trust-charcoal hover:bg-trust-offWhite hover:border-accent-500/30 shadow-elegant border border-accent-500/10'
               }`}
             >
               {category.charAt(0).toUpperCase() + category.slice(1)}
@@ -73,17 +74,17 @@ export default function FAQPage() {
               {filteredFAQs.map((faq: any, index: number) => (
                 <div
                   key={faq._id}
-                  className="bg-white rounded-lg shadow-md overflow-hidden"
+                  className="bg-white rounded-lg border border-accent-500/20 shadow-elegant overflow-hidden hover:shadow-gold transition-all"
                 >
                   <button
                     onClick={() => setExpandedIndex(expandedIndex === index ? null : index)}
-                    className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors"
+                    className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-trust-offWhite transition-colors"
                   >
-                    <span className="font-semibold text-lg text-primary-800 pr-4">
+                    <span className="font-heading font-semibold text-lg text-primary-900 pr-4">
                       {faq.question?.en || 'Question'}
                     </span>
                     <svg
-                      className={`w-6 h-6 text-primary-600 flex-shrink-0 transition-transform ${
+                      className={`w-6 h-6 text-accent-500 flex-shrink-0 transition-transform ${
                         expandedIndex === index ? 'transform rotate-180' : ''
                       }`}
                       fill="none"
@@ -99,13 +100,13 @@ export default function FAQPage() {
                     </svg>
                   </button>
                   {expandedIndex === index && (
-                    <div className="px-6 pb-6 text-gray-700">
+                    <div className="px-6 pb-6 text-trust-charcoal border-t border-accent-500/20">
                       {faq.answer?.en ? (
-                        <div className="prose max-w-none">
+                        <div className="prose max-w-none mt-4 prose-headings:text-primary-900 prose-headings:font-heading prose-p:text-trust-charcoal prose-a:text-accent-500">
                           <PortableText value={faq.answer.en} />
                         </div>
                       ) : (
-                        <p>Answer not available</p>
+                        <p className="mt-4">Answer not available</p>
                       )}
                     </div>
                   )}
@@ -113,8 +114,8 @@ export default function FAQPage() {
               ))}
             </div>
           ) : (
-            <div className="text-center py-12 bg-white rounded-lg shadow">
-              <p className="text-gray-600 mb-4">
+            <div className="text-center py-12 bg-white rounded-lg border border-accent-500/20 shadow-elegant">
+              <p className="text-trust-charcoal mb-4">
                 No FAQs available yet. Please add FAQs in the CMS.
               </p>
             </div>
@@ -122,17 +123,18 @@ export default function FAQPage() {
         </div>
 
         {/* Still Have Questions */}
-        <div className="max-w-4xl mx-auto mt-12 bg-primary-50 rounded-lg p-8 text-center">
+        <div className="max-w-4xl mx-auto mt-12 bg-white border border-accent-500/20 rounded-lg p-8 text-center shadow-elegant">
+          <div className="w-16 h-0.5 bg-accent-500 mx-auto mb-4"></div>
           <h2 className="font-heading font-bold text-2xl mb-4 text-primary-900">
             Still Have Questions?
           </h2>
-          <p className="text-gray-700 mb-6">
+          <p className="text-trust-charcoal mb-6">
             We're here to help 24/7. Contact us directly for personalized assistance.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="tel:+1234567890"
-              className="inline-flex items-center justify-center gap-2 bg-accent-500 hover:bg-accent-600 text-white font-bold px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all"
+              className="inline-flex items-center justify-center gap-2 bg-accent-500 hover:bg-accent-600 text-primary-900 font-bold px-6 py-3 rounded-lg shadow-gold hover:shadow-xl transition-all"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -141,7 +143,7 @@ export default function FAQPage() {
             </a>
             <a
               href="/contact"
-              className="inline-flex items-center justify-center gap-2 bg-primary-600 hover:bg-primary-700 text-white font-bold px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all"
+              className="inline-flex items-center justify-center gap-2 bg-transparent hover:bg-accent-500/10 border-2 border-accent-500 text-accent-500 font-bold px-6 py-3 rounded-lg shadow-elegant hover:shadow-gold transition-all"
             >
               Send a Message
             </a>

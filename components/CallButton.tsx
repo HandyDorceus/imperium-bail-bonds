@@ -14,7 +14,7 @@ export default function CallButton({
   return (
     <a
       href={`tel:${phoneNumber}`}
-      className={`inline-flex items-center gap-2 bg-accent-500 hover:bg-accent-600 text-white font-bold px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 ${className}`}
+      className={`inline-flex items-center gap-2 bg-accent-500 hover:bg-accent-600 text-primary-900 font-bold px-6 py-3 rounded-lg shadow-gold hover:shadow-xl transition-all duration-200 ${className}`}
     >
       <svg
         className="w-5 h-5"

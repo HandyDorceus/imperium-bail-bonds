@@ -19,15 +19,15 @@ export default function Header() {
   ]
 
   return (
-    <header className="bg-primary-800 text-white sticky top-0 z-50 shadow-lg">
+    <header className="bg-primary-900 text-trust-cream sticky top-0 z-50 shadow-elegant border-b border-accent-500/20">
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-accent-500 rounded-lg flex items-center justify-center font-bold text-2xl">
+          <Link href="/" className="flex items-center space-x-3">
+            <div className="w-10 h-10 bg-accent-500 rounded-lg flex items-center justify-center font-bold text-2xl text-primary-900 shadow-gold">
               I
             </div>
-            <span className="font-heading font-bold text-xl hidden sm:inline">
+            <span className="font-heading font-bold text-xl hidden sm:inline text-trust-cream">
               Imperium Bail Bonds
             </span>
           </Link>
@@ -38,7 +38,7 @@ export default function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-white hover:text-accent-300 transition-colors font-medium"
+                className="text-trust-cream hover:text-accent-500 transition-colors font-medium relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-accent-500 after:transition-all"
               >
                 {item.name}
               </Link>
@@ -52,7 +52,7 @@ export default function Header() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden text-white p-2"
+              className="lg:hidden text-accent-500 p-2 hover:bg-primary-800 rounded transition-colors"
               aria-label="Toggle menu"
             >
               <svg
@@ -76,13 +76,13 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <div className="lg:hidden mt-4 pb-4 border-t border-white/10 pt-4">
+          <div className="lg:hidden mt-4 pb-4 border-t border-accent-500/20 pt-4">
             <div className="flex flex-col space-y-3">
               {navigation.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-white hover:text-accent-300 transition-colors font-medium py-2"
+                  className="text-trust-cream hover:text-accent-500 transition-colors font-medium py-2"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.name}

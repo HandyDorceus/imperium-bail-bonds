@@ -22,9 +22,9 @@ export default function CTAButton({
   const baseClasses = 'font-semibold rounded-lg transition-all duration-200 inline-flex items-center justify-center'
 
   const variantClasses = {
-    primary: 'bg-primary-600 hover:bg-primary-700 text-white shadow-lg hover:shadow-xl',
-    secondary: 'bg-white hover:bg-gray-50 text-primary-700 shadow-lg hover:shadow-xl border-2 border-primary-600',
-    accent: 'bg-accent-500 hover:bg-accent-600 text-white shadow-lg hover:shadow-xl',
+    primary: 'bg-accent-500 hover:bg-accent-600 text-primary-900 shadow-gold hover:shadow-xl',
+    secondary: 'bg-transparent hover:bg-accent-500/10 text-accent-500 shadow-elegant hover:shadow-gold border-2 border-accent-500',
+    accent: 'bg-primary-900 hover:bg-primary-800 text-accent-500 shadow-elegant hover:shadow-gold border border-accent-500/30',
   }
 
   const sizeClasses = {

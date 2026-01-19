@@ -45,24 +45,34 @@ function HeroSection() {
   const t = useTranslations('home.hero')
 
   return (
-    <section className="relative bg-gradient-to-br from-primary-800 via-primary-700 to-primary-900 text-white py-20 lg:py-32">
-      <div className="absolute inset-0 bg-black/20"></div>
+    <section className="relative bg-gradient-to-br from-primary-900 via-primary-800 to-trust-charcoal text-trust-cream py-20 lg:py-32">
+      <div className="absolute inset-0 bg-black/30"></div>
+
+      {/* Subtle texture overlay */}
+      <div className="absolute inset-0 opacity-5" style={{backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(201, 169, 97, 0.15) 1px, transparent 0)', backgroundSize: '32px 32px'}}></div>
+
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl mb-6 leading-tight">
+          {/* Thin gold accent line */}
+          <div className="w-24 h-0.5 bg-accent-500 mx-auto mb-8"></div>
+
+          <h1 className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl mb-6 leading-tight text-trust-cream">
             {t('title')}
           </h1>
-          <p className="text-xl md:text-2xl mb-8 text-gray-100">
+          <p className="text-xl md:text-2xl mb-8 text-trust-offWhite">
             {t('subtitle')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <CTAButton href="/contact" variant="accent" size="lg">
+            <CTAButton href="/contact" variant="primary" size="lg">
               {t('cta')}
             </CTAButton>
             <CallButton phoneNumber="+1234567890">
               {t('call')}
             </CallButton>
           </div>
+
+          {/* Bottom accent line */}
+          <div className="w-24 h-0.5 bg-accent-500 mx-auto mt-12"></div>
         </div>
       </div>
 
@@ -71,7 +81,7 @@ function HeroSection() {
         <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
             d="M0 0L60 10C120 20 240 40 360 46.7C480 53 600 47 720 43.3C840 40 960 40 1080 46.7C1200 53 1320 67 1380 73.3L1440 80V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0V0Z"
-            fill="white"
+            fill="#faf8f4"
           />
         </svg>
       </div>
@@ -118,21 +128,22 @@ function TrustSection() {
   ]
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-trust-cream">
       <div className="container mx-auto px-4">
-        <h2 className="font-heading font-bold text-3xl md:text-4xl text-center mb-12 text-primary-900">
+        <h2 className="font-heading font-bold text-3xl md:text-4xl text-center mb-4 text-primary-900">
           {t('title')}
         </h2>
+        <div className="w-24 h-0.5 bg-accent-500 mx-auto mb-12"></div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {trustItems.map((item, index) => (
             <div
               key={index}
-              className="text-center p-6 rounded-lg hover:shadow-trust transition-shadow"
+              className="text-center p-6 rounded-lg hover:shadow-gold transition-all bg-white border border-accent-500/10"
             >
-              <div className="text-primary-600 mb-4 flex justify-center">
+              <div className="text-accent-500 mb-4 flex justify-center">
                 {item.icon}
               </div>
-              <h3 className="font-semibold text-lg text-gray-800">{item.title}</h3>
+              <h3 className="font-semibold text-lg text-primary-900">{item.title}</h3>
             </div>
           ))}
         </div>
@@ -146,13 +157,14 @@ function ServicesSection({ services }: { services: any[] }) {
   const common = useTranslations('common')
 
   return (
-    <section className="py-16 bg-trust-lightGray">
+    <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="font-heading font-bold text-3xl md:text-4xl mb-4 text-primary-900">
             {t('title')}
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <div className="w-24 h-0.5 bg-accent-500 mx-auto mb-4"></div>
+          <p className="text-lg text-trust-charcoal max-w-2xl mx-auto">
             {t('subtitle')}
           </p>
         </div>
@@ -162,12 +174,12 @@ function ServicesSection({ services }: { services: any[] }) {
             {services.slice(0, 6).map((service: any) => (
               <div
                 key={service._id}
-                className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow"
+                className="bg-trust-cream p-6 rounded-lg border border-accent-500/20 hover:border-accent-500 hover:shadow-gold transition-all"
               >
-                <h3 className="font-heading font-bold text-xl mb-3 text-primary-800">
+                <h3 className="font-heading font-bold text-xl mb-3 text-primary-900">
                   {service.title?.en || 'Service'}
                 </h3>
-                <p className="text-gray-600 mb-4">
+                <p className="text-trust-charcoal mb-4">
                   {service.description?.en || 'Service description'}
                 </p>
                 <CTAButton href={`/services#${service.slug?.current}`} variant="secondary" size="sm">
@@ -178,7 +190,7 @@ function ServicesSection({ services }: { services: any[] }) {
           </div>
         ) : (
           <div className="text-center py-12">
-            <p className="text-gray-600 mb-4">
+            <p className="text-trust-charcoal mb-4">
               Services content coming soon. Please add services in the CMS.
             </p>
             <CTAButton href="/studio" variant="primary">
@@ -203,12 +215,13 @@ function CTASection() {
   const t = useTranslations('home.hero')
 
   return (
-    <section className="py-16 bg-gradient-to-r from-primary-700 to-primary-900 text-white">
+    <section className="py-16 bg-gradient-to-br from-primary-900 via-primary-800 to-trust-charcoal text-trust-cream border-t border-accent-500/30">
       <div className="container mx-auto px-4 text-center">
+        <div className="w-24 h-0.5 bg-accent-500 mx-auto mb-6"></div>
         <h2 className="font-heading font-bold text-3xl md:text-4xl mb-6">
           Need Help Right Now?
         </h2>
-        <p className="text-xl mb-8 max-w-2xl mx-auto">
+        <p className="text-xl mb-8 max-w-2xl mx-auto text-trust-offWhite">
           Our team is available 24/7 to help you navigate the bail bond process and get your loved ones home quickly.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -219,6 +232,7 @@ function CTASection() {
             Send a Message
           </CTAButton>
         </div>
+        <div className="w-24 h-0.5 bg-accent-500 mx-auto mt-8"></div>
       </div>
     </section>
   )
