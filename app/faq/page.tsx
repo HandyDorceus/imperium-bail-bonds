@@ -7,6 +7,7 @@ import { PortableText } from '@portabletext/react'
 
 export default function FAQPage() {
   const t = useTranslations('faq')
+  const business = useTranslations('businessInfo')
   const [faqs, setFaqs] = useState<any[]>([])
   const [selectedCategory, setSelectedCategory] = useState('all')
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null)
@@ -133,7 +134,7 @@ export default function FAQPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="tel:+1234567890"
+              href={business('phoneLink')}
               className="inline-flex items-center justify-center gap-2 bg-accent-500 hover:bg-accent-600 text-primary-900 font-bold px-6 py-3 rounded-lg shadow-gold hover:shadow-xl transition-all"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

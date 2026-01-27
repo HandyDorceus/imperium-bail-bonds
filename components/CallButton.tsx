@@ -1,5 +1,7 @@
 'use client'
 
+import { useTranslations } from 'next-intl'
+
 interface CallButtonProps {
   phoneNumber?: string
   children: React.ReactNode
@@ -7,13 +9,15 @@ interface CallButtonProps {
 }
 
 export default function CallButton({
-  phoneNumber = '+1234567890',
+  phoneNumber,
   children,
   className = '',
 }: CallButtonProps) {
+  const business = useTranslations('businessInfo')
+  const phone = phoneNumber || business('phoneLink')
   return (
     <a
-      href={`tel:${phoneNumber}`}
+      href={phone.startsWith('tel:') ? phone : `tel:${phone}`}
       className={`inline-flex items-center gap-2 bg-accent-500 hover:bg-accent-600 text-primary-900 font-bold px-6 py-3 rounded-lg shadow-gold hover:shadow-xl transition-all duration-200 ${className}`}
     >
       <svg

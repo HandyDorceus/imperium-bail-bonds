@@ -11,13 +11,16 @@ const contactSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
   email: z.string().email('Invalid email address'),
   phone: z.string().min(10, 'Phone number must be at least 10 digits'),
-  message: z.string().min(10, 'Message must be at least 10 characters'),
+  inmateLookup: z.boolean().optional(),
+  howCanWeHelp: z.string().min(10, 'Please tell us how we can help (at least 10 characters)'),
+  additionalInfo: z.string().optional(),
 })
 
 type ContactFormData = z.infer<typeof contactSchema>
 
 export default function ContactPage() {
   const t = useTranslations('contact')
+  const business = useTranslations('businessInfo')
   const [contactInfo, setContactInfo] = useState<any>(null)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
 
@@ -154,18 +157,49 @@ export default function ContactPage() {
                 )}
               </div>
 
+              <div className="flex items-start">
+                <input
+                  {...register('inmateLookup')}
+                  type="checkbox"
+                  id="inmateLookup"
+                  className="mt-1 h-5 w-5 text-accent-500 border-accent-500/30 rounded focus:ring-2 focus:ring-accent-500"
+                />
+                <div className="ml-3">
+                  <label htmlFor="inmateLookup" className="block text-sm font-medium text-primary-900 cursor-pointer">
+                    {t('form.inmateLookup')}
+                  </label>
+                  <p className="text-xs text-trust-charcoal mt-1">{t('form.inmateLookupHelper')}</p>
+                </div>
+              </div>
+
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-primary-900 mb-2">
-                  {t('form.message')}
+                <label htmlFor="howCanWeHelp" className="block text-sm font-medium text-primary-900 mb-2">
+                  {t('form.howCanWeHelp')} *
                 </label>
                 <textarea
-                  {...register('message')}
-                  id="message"
-                  rows={5}
+                  {...register('howCanWeHelp')}
+                  id="howCanWeHelp"
+                  rows={4}
                   className="w-full px-4 py-2 border border-accent-500/30 rounded-lg focus:ring-2 focus:ring-accent-500 focus:border-accent-500 transition-all"
                 ></textarea>
-                {errors.message && (
-                  <p className="mt-1 text-sm text-red-600">{errors.message.message}</p>
+                {errors.howCanWeHelp && (
+                  <p className="mt-1 text-sm text-red-600">{errors.howCanWeHelp.message}</p>
+                )}
+              </div>
+
+              <div>
+                <label htmlFor="additionalInfo" className="block text-sm font-medium text-primary-900 mb-2">
+                  {t('form.additionalInfo')}
+                </label>
+                <textarea
+                  {...register('additionalInfo')}
+                  id="additionalInfo"
+                  rows={5}
+                  placeholder={t('form.additionalInfoPlaceholder')}
+                  className="w-full px-4 py-2 border border-accent-500/30 rounded-lg focus:ring-2 focus:ring-accent-500 focus:border-accent-500 transition-all"
+                ></textarea>
+                {errors.additionalInfo && (
+                  <p className="mt-1 text-sm text-red-600">{errors.additionalInfo.message}</p>
                 )}
               </div>
 
@@ -205,8 +239,8 @@ export default function ContactPage() {
                   </svg>
                   <div>
                     <p className="font-semibold mb-1">{t('info.phone')}</p>
-                    <a href={`tel:${contactInfo?.phone || '+1234567890'}`} className="text-accent-500 hover:text-accent-400 transition-colors">
-                      {contactInfo?.phone || '(123) 456-7890'}
+                    <a href={contactInfo?.phone ? `tel:${contactInfo.phone}` : business('phoneLink')} className="text-accent-500 hover:text-accent-400 transition-colors">
+                      {contactInfo?.phone || business('phoneFormatted')}
                     </a>
                   </div>
                 </div>
@@ -217,8 +251,8 @@ export default function ContactPage() {
                   </svg>
                   <div>
                     <p className="font-semibold mb-1">{t('info.email')}</p>
-                    <a href={`mailto:${contactInfo?.email || 'info@imperiumbailbonds.com'}`} className="text-accent-500 hover:text-accent-400 transition-colors">
-                      {contactInfo?.email || 'info@imperiumbailbonds.com'}
+                    <a href={`mailto:${contactInfo?.email || business('email')}`} className="text-accent-500 hover:text-accent-400 transition-colors">
+                      {contactInfo?.email || business('email')}
                     </a>
                   </div>
                 </div>
@@ -257,7 +291,7 @@ export default function ContactPage() {
 
             {/* Quick Call Button */}
             <a
-              href={`tel:${contactInfo?.phone || '+1234567890'}`}
+              href={contactInfo?.phone ? `tel:${contactInfo.phone}` : business('phoneLink')}
               className="block w-full text-center bg-accent-500 hover:bg-accent-600 text-primary-900 font-bold py-4 px-6 rounded-lg shadow-gold hover:shadow-xl transition-all"
             >
               <div className="flex items-center justify-center gap-2">

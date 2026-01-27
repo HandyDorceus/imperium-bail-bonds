@@ -29,6 +29,12 @@ export default async function Home() {
       {/* Hero Section */}
       <HeroSection />
 
+      {/* Mission Statement */}
+      <MissionSection />
+
+      {/* Value Propositions */}
+      <ValuePropsSection />
+
       {/* Trust Indicators */}
       <TrustSection />
 
@@ -66,7 +72,7 @@ function HeroSection() {
             <CTAButton href="/contact" variant="primary" size="lg">
               {t('cta')}
             </CTAButton>
-            <CallButton phoneNumber="+1234567890">
+            <CallButton>
               {t('call')}
             </CallButton>
           </div>
@@ -84,6 +90,95 @@ function HeroSection() {
             fill="#faf8f4"
           />
         </svg>
+      </div>
+    </section>
+  )
+}
+
+function MissionSection() {
+  const t = useTranslations('home.mission')
+
+  return (
+    <section className="py-12 bg-white">
+      <div className="container mx-auto px-4 text-center">
+        <div className="max-w-3xl mx-auto">
+          <div className="w-16 h-0.5 bg-accent-500 mx-auto mb-6"></div>
+          <h2 className="font-heading font-bold text-2xl md:text-3xl mb-4 text-primary-900">
+            {t('title')}
+          </h2>
+          <p className="text-xl md:text-2xl text-primary-900 font-medium italic">
+            "{t('statement')}"
+          </p>
+          <div className="w-16 h-0.5 bg-accent-500 mx-auto mt-6"></div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function ValuePropsSection() {
+  const t = useTranslations('home.valueProps')
+
+  const valueProps = [
+    {
+      icon: (
+        <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+        </svg>
+      ),
+      title: t('stepByStep.title'),
+      description: t('stepByStep.description'),
+    },
+    {
+      icon: (
+        <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+        </svg>
+      ),
+      title: t('comfort.title'),
+      description: t('comfort.description'),
+    },
+    {
+      icon: (
+        <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      ),
+      title: t('rebates.title'),
+      description: t('rebates.description'),
+    },
+    {
+      icon: (
+        <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+        </svg>
+      ),
+      title: t('experience.title'),
+      description: t('experience.description'),
+    },
+  ]
+
+  return (
+    <section className="py-16 bg-trust-offWhite">
+      <div className="container mx-auto px-4">
+        <h2 className="font-heading font-bold text-3xl md:text-4xl text-center mb-4 text-primary-900">
+          {t('title')}
+        </h2>
+        <div className="w-24 h-0.5 bg-accent-500 mx-auto mb-12"></div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {valueProps.map((prop, index) => (
+            <div
+              key={index}
+              className="bg-white p-6 rounded-lg border border-accent-500/20 hover:border-accent-500 hover:shadow-gold transition-all text-center"
+            >
+              <div className="text-accent-500 mb-4 flex justify-center">
+                {prop.icon}
+              </div>
+              <h3 className="font-heading font-semibold text-lg mb-2 text-primary-900">{prop.title}</h3>
+              <p className="text-trust-charcoal text-sm">{prop.description}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   )
@@ -225,7 +320,7 @@ function CTASection() {
           Our team is available 24/7 to help you navigate the bail bond process and get your loved ones home quickly.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <CallButton phoneNumber="+1234567890">
+          <CallButton>
             {t('call')}
           </CallButton>
           <CTAButton href="/contact" variant="secondary" size="lg">

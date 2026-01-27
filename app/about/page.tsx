@@ -8,6 +8,8 @@ export const metadata = {
 
 export default async function AboutPage() {
   const t = await getTranslations('about')
+  const business = await getTranslations('businessInfo')
+  const mission = await getTranslations('home.mission')
 
   return (
     <div className="py-16 bg-trust-cream">
@@ -29,6 +31,9 @@ export default async function AboutPage() {
             <h2 className="font-heading font-bold text-3xl mb-6 text-primary-900 border-b border-accent-500/30 pb-3">
               Our Mission
             </h2>
+            <p className="text-xl text-primary-900 font-medium italic mb-8 text-center bg-trust-offWhite p-6 rounded-lg border-l-4 border-accent-500">
+              "{mission('statement')}"
+            </p>
             <p className="text-lg text-trust-charcoal mb-6 leading-relaxed">
               At Imperium Bail Bonds, our mission is simple yet profound: reuniting families.
               We understand that when a loved one is incarcerated, time is of the essence.
@@ -36,11 +41,27 @@ export default async function AboutPage() {
               family back together as quickly as possible.
             </p>
             <p className="text-lg text-trust-charcoal mb-6 leading-relaxed">
-              With years of experience in the bail bond industry, our team has helped countless
-              families navigate the complex legal system with compassion, professionalism, and
-              discretion. We treat every client with the respect and dignity they deserve,
-              understanding that difficult circumstances can happen to anyone.
+              With over <strong className="text-accent-500">{business('experience')} years of experience</strong> in
+              the bail bond industry, our team has helped countless families throughout <strong className="text-accent-500">{business('serviceArea')}</strong> navigate
+              the complex legal system with compassion, professionalism, and discretion. We treat every client
+              with the respect and dignity they deserve, understanding that difficult circumstances can happen to anyone.
             </p>
+            <div className="bg-accent-50 p-6 rounded-lg border border-accent-500/20 mt-6">
+              <div className="grid md:grid-cols-3 gap-6 text-center">
+                <div>
+                  <div className="text-3xl font-bold text-accent-500 mb-2">{business('experience')}</div>
+                  <div className="text-sm text-trust-charcoal">Years of Experience</div>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-accent-500 mb-2">{business('availability')}</div>
+                  <div className="text-sm text-trust-charcoal">Available</div>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-accent-500 mb-2">58</div>
+                  <div className="text-sm text-trust-charcoal">California Counties Served</div>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="bg-trust-offWhite rounded-lg border border-accent-500/20 p-8 md:p-12 mb-12">

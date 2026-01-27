@@ -7,6 +7,17 @@
     "contact": "Contact",
     "reviews": "Reviews"
   },
+  "businessInfo": {
+    "phone": "951-848-7858",
+    "phoneFormatted": "(951) 848-7858",
+    "phoneLink": "tel:+19518487858",
+    "email": "info@imperiumbailbonds.com",
+    "domain": "imperiumbailbonds.com",
+    "license": "1843890",
+    "experience": "20+",
+    "availability": "24/7",
+    "serviceArea": "All Counties in California"
+  },
   "home": {
     "hero": {
       "title": "Get Your Loved Ones Home",
@@ -14,9 +25,32 @@
       "cta": "Get Help Now",
       "call": "Call 24/7"
     },
+    "mission": {
+      "title": "Our Mission",
+      "statement": "We're here to help you bring your loved one back together."
+    },
+    "valueProps": {
+      "title": "Why Families Trust Imperium Bail Bonds",
+      "stepByStep": {
+        "title": "Step-by-Step Guidance",
+        "description": "We guide you through the entire process step by step"
+      },
+      "comfort": {
+        "title": "Post Bail from Home",
+        "description": "Post bail from the comfort of your home"
+      },
+      "rebates": {
+        "title": "Additional Rebates",
+        "description": "Additional rebates available"
+      },
+      "experience": {
+        "title": "20+ Years Experience",
+        "description": "Over two decades serving California families"
+      }
+    },
     "trust": {
       "title": "Why Choose Imperium Bail Bonds",
-      "experience": "Years of Experience",
+      "experience": "20+ Years of Experience",
       "available": "24/7 Availability",
       "confidential": "Confidential Service",
       "professional": "Professional Team"
@@ -45,7 +79,12 @@
       "name": "Full Name",
       "email": "Email Address",
       "phone": "Phone Number",
-      "message": "How can we help?",
+      "inmateLookup": "Request free inmate information lookup",
+      "inmateLookupHelper": "We can help you locate your loved one and provide bail information",
+      "howCanWeHelp": "How can we help you?",
+      "additionalInfo": "Additional information",
+      "additionalInfoPlaceholder": "Inmate name, booking number, facility location, or any other details that may help us assist you...",
+      "message": "Message",
       "submit": "Send Message",
       "sending": "Sending...",
       "success": "Message sent successfully! We'll contact you soon.",
@@ -77,6 +116,9 @@
     "contactInfo": "Contact Information",
     "followUs": "Follow Us",
     "copyright": "© 2025 Imperium Bail Bonds. All rights reserved.",
-    "emergency": "24/7 Emergency Service Available"
+    "emergency": "24/7 Emergency Service Available",
+    "spanish": "SE HABLA ESPAÑOL",
+    "serviceArea": "SERVING ALL COUNTIES IN CALIFORNIA",
+    "license": "LICENSE #1843890"
   }
 }
