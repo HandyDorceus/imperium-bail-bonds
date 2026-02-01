@@ -63,7 +63,7 @@ export default function FAQPage() {
                   : 'bg-white text-trust-charcoal hover:bg-trust-offWhite hover:border-accent-500/30 shadow-elegant border border-accent-500/10'
               }`}
             >
-              {category.charAt(0).toUpperCase() + category.slice(1)}
+              {t(`categories.${category}`)}
             </button>
           ))}
         </div>
@@ -107,7 +107,7 @@ export default function FAQPage() {
                           <PortableText value={faq.answer.en} />
                         </div>
                       ) : (
-                        <p className="mt-4">Answer not available</p>
+                        <p className="mt-4">{t('noAnswer')}</p>
                       )}
                     </div>
                   )}
@@ -117,7 +117,7 @@ export default function FAQPage() {
           ) : (
             <div className="text-center py-12 bg-white rounded-lg border border-accent-500/20 shadow-elegant">
               <p className="text-trust-charcoal mb-4">
-                No FAQs available yet. Please add FAQs in the CMS.
+                {t('noFAQs')}
               </p>
             </div>
           )}
@@ -127,10 +127,10 @@ export default function FAQPage() {
         <div className="max-w-4xl mx-auto mt-12 bg-white border border-accent-500/20 rounded-lg p-8 text-center shadow-elegant">
           <div className="w-16 h-0.5 bg-accent-500 mx-auto mb-4"></div>
           <h2 className="font-heading font-bold text-2xl mb-4 text-primary-900">
-            Still Have Questions?
+            {t('stillHaveQuestions.title')}
           </h2>
           <p className="text-trust-charcoal mb-6">
-            We're here to help 24/7. Contact us directly for personalized assistance.
+            {t('stillHaveQuestions.description')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
@@ -140,13 +140,13 @@ export default function FAQPage() {
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
-              Call Us Now
+              {t('stillHaveQuestions.callUs')}
             </a>
             <a
               href="/contact"
               className="inline-flex items-center justify-center gap-2 bg-transparent hover:bg-accent-500/10 border-2 border-accent-500 text-accent-500 font-bold px-6 py-3 rounded-lg shadow-elegant hover:shadow-gold transition-all"
             >
-              Send a Message
+              {t('stillHaveQuestions.sendMessage')}
             </a>
           </div>
         </div>

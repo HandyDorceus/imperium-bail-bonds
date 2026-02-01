@@ -105,7 +105,8 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-accent-500/20 mt-8 pt-8 text-center text-trust-lightGray text-sm">
-          <p>{t('copyright').replace('2025', currentYear.toString())}</p>
+          <p className="mb-2">{t('copyright').replace('2025', currentYear.toString())}</p>
+          <p className="text-xs text-accent-500/70">{t('developedBy')}</p>
         </div>
       </div>
     </footer>

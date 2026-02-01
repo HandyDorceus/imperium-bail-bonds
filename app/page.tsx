@@ -307,24 +307,25 @@ function ServicesSection({ services }: { services: any[] }) {
 }
 
 function CTASection() {
-  const t = useTranslations('home.hero')
+  const t = useTranslations('home.cta')
+  const heroT = useTranslations('home.hero')
 
   return (
     <section className="py-16 bg-gradient-to-br from-primary-900 via-primary-800 to-trust-charcoal text-trust-cream border-t border-accent-500/30">
       <div className="container mx-auto px-4 text-center">
         <div className="w-24 h-0.5 bg-accent-500 mx-auto mb-6"></div>
         <h2 className="font-heading font-bold text-3xl md:text-4xl mb-6">
-          Need Help Right Now?
+          {t('title')}
         </h2>
         <p className="text-xl mb-8 max-w-2xl mx-auto text-trust-offWhite">
-          Our team is available 24/7 to help you navigate the bail bond process and get your loved ones home quickly.
+          {t('description')}
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <CallButton>
-            {t('call')}
+            {heroT('call')}
           </CallButton>
           <CTAButton href="/contact" variant="secondary" size="lg">
-            Send a Message
+            {t('message')}
           </CTAButton>
         </div>
         <div className="w-24 h-0.5 bg-accent-500 mx-auto mt-8"></div>

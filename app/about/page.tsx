@@ -29,72 +29,106 @@ export default async function AboutPage() {
         <div className="max-w-4xl mx-auto">
           <div className="bg-white rounded-lg border border-accent-500/20 shadow-elegant p-8 md:p-12 mb-12">
             <h2 className="font-heading font-bold text-3xl mb-6 text-primary-900 border-b border-accent-500/30 pb-3">
-              Our Mission
+              {t('mission.title')}
             </h2>
             <p className="text-xl text-primary-900 font-medium italic mb-8 text-center bg-trust-offWhite p-6 rounded-lg border-l-4 border-accent-500">
               "{mission('statement')}"
             </p>
             <p className="text-lg text-trust-charcoal mb-6 leading-relaxed">
-              At Imperium Bail Bonds, our mission is simple yet profound: reuniting families.
-              We understand that when a loved one is incarcerated, time is of the essence.
-              Every moment apart can feel like an eternity, and we're here to help bring your
-              family back together as quickly as possible.
+              {t('mission.intro')}
             </p>
             <p className="text-lg text-trust-charcoal mb-6 leading-relaxed">
-              With over <strong className="text-accent-500">{business('experience')} years of experience</strong> in
-              the bail bond industry, our team has helped countless families throughout <strong className="text-accent-500">{business('serviceArea')}</strong> navigate
-              the complex legal system with compassion, professionalism, and discretion. We treat every client
-              with the respect and dignity they deserve, understanding that difficult circumstances can happen to anyone.
+              {t('mission.experience', { years: business('experience'), area: business('serviceArea') })}
             </p>
             <div className="bg-accent-50 p-6 rounded-lg border border-accent-500/20 mt-6">
               <div className="grid md:grid-cols-3 gap-6 text-center">
                 <div>
                   <div className="text-3xl font-bold text-accent-500 mb-2">{business('experience')}</div>
-                  <div className="text-sm text-trust-charcoal">Years of Experience</div>
+                  <div className="text-sm text-trust-charcoal">{t('mission.stats.yearsLabel')}</div>
                 </div>
                 <div>
                   <div className="text-3xl font-bold text-accent-500 mb-2">{business('availability')}</div>
-                  <div className="text-sm text-trust-charcoal">Available</div>
+                  <div className="text-sm text-trust-charcoal">{t('mission.stats.availableLabel')}</div>
                 </div>
                 <div>
                   <div className="text-3xl font-bold text-accent-500 mb-2">58</div>
-                  <div className="text-sm text-trust-charcoal">California Counties Served</div>
+                  <div className="text-sm text-trust-charcoal">{t('mission.stats.countiesLabel')}</div>
                 </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Team Section */}
+          <div className="bg-white rounded-lg border border-accent-500/20 shadow-elegant p-8 md:p-12 mb-12">
+            <h2 className="font-heading font-bold text-3xl mb-8 text-center text-primary-900 border-b border-accent-500/30 pb-3">
+              {t('team.title')}
+            </h2>
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* CEO */}
+              <div className="bg-trust-offWhite p-6 rounded-lg border border-accent-500/20 hover:shadow-gold transition-all">
+                <div className="flex flex-col items-center text-center mb-4">
+                  <div className="w-32 h-32 bg-gradient-to-br from-primary-900 to-accent-500 rounded-full flex items-center justify-center mb-4 border-4 border-accent-500/30">
+                    <span className="text-5xl font-heading font-bold text-trust-cream">L</span>
+                  </div>
+                  <h3 className="font-heading font-bold text-2xl text-primary-900 mb-1">
+                    {t('team.ceo.name')}
+                  </h3>
+                  <p className="text-accent-500 font-semibold mb-4">
+                    {t('team.ceo.title')}
+                  </p>
+                </div>
+                <p className="text-trust-charcoal leading-relaxed">
+                  {t('team.ceo.bio')}
+                </p>
+              </div>
+
+              {/* COO */}
+              <div className="bg-trust-offWhite p-6 rounded-lg border border-accent-500/20 hover:shadow-gold transition-all">
+                <div className="flex flex-col items-center text-center mb-4">
+                  <div className="w-32 h-32 bg-gradient-to-br from-primary-900 to-accent-500 rounded-full flex items-center justify-center mb-4 border-4 border-accent-500/30">
+                    <span className="text-5xl font-heading font-bold text-trust-cream">A</span>
+                  </div>
+                  <h3 className="font-heading font-bold text-2xl text-primary-900 mb-1">
+                    {t('team.coo.name')}
+                  </h3>
+                  <p className="text-accent-500 font-semibold mb-4">
+                    {t('team.coo.title')}
+                  </p>
+                </div>
+                <p className="text-trust-charcoal leading-relaxed">
+                  {t('team.coo.bio')}
+                </p>
               </div>
             </div>
           </div>
 
           <div className="bg-trust-offWhite rounded-lg border border-accent-500/20 p-8 md:p-12 mb-12">
             <h2 className="font-heading font-bold text-3xl mb-6 text-primary-900 border-b border-accent-500/30 pb-3">
-              Our Values
+              {t('values.title')}
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <h3 className="font-heading font-semibold text-xl mb-3 text-accent-500">Integrity</h3>
+                <h3 className="font-heading font-semibold text-xl mb-3 text-accent-500">{t('values.integrity.title')}</h3>
                 <p className="text-trust-charcoal">
-                  We operate with complete transparency and honesty, ensuring you understand
-                  every step of the bail bond process.
+                  {t('values.integrity.description')}
                 </p>
               </div>
               <div>
-                <h3 className="font-heading font-semibold text-xl mb-3 text-accent-500">Compassion</h3>
+                <h3 className="font-heading font-semibold text-xl mb-3 text-accent-500">{t('values.compassion.title')}</h3>
                 <p className="text-trust-charcoal">
-                  We understand the emotional stress of having a loved one incarcerated and
-                  provide support with empathy and care.
+                  {t('values.compassion.description')}
                 </p>
               </div>
               <div>
-                <h3 className="font-heading font-semibold text-xl mb-3 text-accent-500">Professionalism</h3>
+                <h3 className="font-heading font-semibold text-xl mb-3 text-accent-500">{t('values.professionalism.title')}</h3>
                 <p className="text-trust-charcoal">
-                  Our licensed bail bondsmen bring years of expertise to ensure efficient
-                  and reliable service every time.
+                  {t('values.professionalism.description')}
                 </p>
               </div>
               <div>
-                <h3 className="font-heading font-semibold text-xl mb-3 text-accent-500">Availability</h3>
+                <h3 className="font-heading font-semibold text-xl mb-3 text-accent-500">{t('values.availability.title')}</h3>
                 <p className="text-trust-charcoal">
-                  We're available 24/7 because we know that emergencies don't wait for
-                  business hours.
+                  {t('values.availability.description')}
                 </p>
               </div>
             </div>
@@ -102,7 +136,7 @@ export default async function AboutPage() {
 
           <div className="bg-white rounded-lg border border-accent-500/20 shadow-elegant p-8 md:p-12">
             <h2 className="font-heading font-bold text-3xl mb-6 text-primary-900 border-b border-accent-500/30 pb-3">
-              Why Choose Imperium Bail Bonds?
+              {t('whyChoose.title')}
             </h2>
             <ul className="space-y-4">
               <li className="flex items-start">
@@ -110,7 +144,7 @@ export default async function AboutPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                 </svg>
                 <span className="text-lg text-trust-charcoal">
-                  <strong className="text-primary-900">Fast Processing:</strong> We work quickly to secure release, often within hours
+                  <strong className="text-primary-900">{t('whyChoose.fastProcessing.label')}</strong> {t('whyChoose.fastProcessing.description')}
                 </span>
               </li>
               <li className="flex items-start">
@@ -118,7 +152,7 @@ export default async function AboutPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                 </svg>
                 <span className="text-lg text-trust-charcoal">
-                  <strong className="text-primary-900">Flexible Payment Plans:</strong> We offer payment options that work with your budget
+                  <strong className="text-primary-900">{t('whyChoose.flexiblePayment.label')}</strong> {t('whyChoose.flexiblePayment.description')}
                 </span>
               </li>
               <li className="flex items-start">
@@ -126,7 +160,7 @@ export default async function AboutPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                 </svg>
                 <span className="text-lg text-trust-charcoal">
-                  <strong className="text-primary-900">Complete Confidentiality:</strong> Your privacy is our priority
+                  <strong className="text-primary-900">{t('whyChoose.confidentiality.label')}</strong> {t('whyChoose.confidentiality.description')}
                 </span>
               </li>
               <li className="flex items-start">
@@ -134,7 +168,7 @@ export default async function AboutPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                 </svg>
                 <span className="text-lg text-trust-charcoal">
-                  <strong className="text-primary-900">Expert Guidance:</strong> We guide you through the entire legal process
+                  <strong className="text-primary-900">{t('whyChoose.expertGuidance.label')}</strong> {t('whyChoose.expertGuidance.description')}
                 </span>
               </li>
             </ul>
@@ -142,7 +176,7 @@ export default async function AboutPage() {
 
           <div className="text-center mt-12">
             <CTAButton href="/contact" variant="primary" size="lg">
-              Contact Us Today
+              {t('cta')}
             </CTAButton>
           </div>
         </div>

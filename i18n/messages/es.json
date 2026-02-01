@@ -58,23 +58,110 @@
     "services": {
       "title": "Nuestros Servicios",
       "subtitle": "Soluciones integrales de fianzas para cada situación"
+    },
+    "cta": {
+      "title": "¿Necesita Ayuda Ahora Mismo?",
+      "description": "Nuestro equipo está disponible 24/7 para ayudarle a navegar el proceso de fianzas y traer a sus seres queridos a casa rápidamente.",
+      "message": "Enviar un Mensaje"
     }
   },
   "services": {
     "title": "Nuestros Servicios",
-    "subtitle": "Servicios profesionales de fianzas adaptados a sus necesidades"
+    "subtitle": "Servicios profesionales de fianzas adaptados a sus necesidades",
+    "noServices": "Aún no hay servicios disponibles. Por favor, agregue servicios en el CMS.",
+    "keyFeatures": "Características Clave:"
   },
   "about": {
     "title": "Acerca de Imperium Bail Bonds",
-    "subtitle": "Nuestra Misión es la Reunificación Familiar"
+    "subtitle": "Nuestra Misión es la Reunificación Familiar",
+    "mission": {
+      "title": "Nuestra Misión",
+      "intro": "En Imperium Bail Bonds, nuestra misión es simple pero profunda: reunir familias. Entendemos que cuando un ser querido está encarcelado, el tiempo es esencial. Cada momento separados puede sentirse como una eternidad, y estamos aquí para ayudar a reunir a su familia lo más rápido posible.",
+      "experience": "Con más de {years} años de experiencia en la industria de fianzas, nuestro equipo ha ayudado a innumerables familias en {area} a navegar el complejo sistema legal con compasión, profesionalismo y discreción. Tratamos a cada cliente con el respeto y la dignidad que merecen, entendiendo que las circunstancias difíciles pueden sucederle a cualquiera.",
+      "stats": {
+        "yearsLabel": "Años de Experiencia",
+        "availableLabel": "Disponible",
+        "countiesLabel": "Condados de California Servidos"
+      }
+    },
+    "values": {
+      "title": "Nuestros Valores",
+      "integrity": {
+        "title": "Integridad",
+        "description": "Operamos con total transparencia y honestidad, asegurando que comprenda cada paso del proceso de fianzas."
+      },
+      "compassion": {
+        "title": "Compasión",
+        "description": "Entendemos el estrés emocional de tener un ser querido encarcelado y brindamos apoyo con empatía y cuidado."
+      },
+      "professionalism": {
+        "title": "Profesionalismo",
+        "description": "Nuestros agentes de fianzas licenciados aportan años de experiencia para garantizar un servicio eficiente y confiable en todo momento."
+      },
+      "availability": {
+        "title": "Disponibilidad",
+        "description": "Estamos disponibles 24/7 porque sabemos que las emergencias no esperan al horario comercial."
+      }
+    },
+    "whyChoose": {
+      "title": "¿Por Qué Elegir Imperium Bail Bonds?",
+      "fastProcessing": {
+        "label": "Procesamiento Rápido:",
+        "description": "Trabajamos rápidamente para asegurar la liberación, a menudo en cuestión de horas"
+      },
+      "flexiblePayment": {
+        "label": "Planes de Pago Flexibles:",
+        "description": "Ofrecemos opciones de pago que se adaptan a su presupuesto"
+      },
+      "confidentiality": {
+        "label": "Confidencialidad Completa:",
+        "description": "Su privacidad es nuestra prioridad"
+      },
+      "expertGuidance": {
+        "label": "Orientación Experta:",
+        "description": "Le guiamos a través de todo el proceso legal"
+      }
+    },
+    "cta": "Contáctenos Hoy",
+    "team": {
+      "title": "Conozca Nuestro Liderazgo",
+      "ceo": {
+        "name": "Guadalupe (Lupe)",
+        "title": "Directora Ejecutiva",
+        "bio": "Con pasión por ayudar a las familias en su momento de necesidad, Lupe lidera Imperium Bail Bonds con compasión y dedicación. Su compromiso con un servicio excepcional ha convertido a Imperium en un nombre de confianza en California."
+      },
+      "coo": {
+        "name": "Adrian",
+        "title": "Director de Operaciones",
+        "bio": "Adrian aporta excelencia operativa y visión estratégica a Imperium Bail Bonds. Su enfoque en la eficiencia y la atención al cliente garantiza que cada familia reciba el servicio profesional que merece."
+      }
+    }
   },
   "faq": {
     "title": "Preguntas Frecuentes",
-    "subtitle": "Encuentre respuestas a preguntas comunes sobre fianzas"
+    "subtitle": "Encuentre respuestas a preguntas comunes sobre fianzas",
+    "categories": {
+      "all": "Todas",
+      "general": "General",
+      "process": "Proceso",
+      "payment": "Pago",
+      "legal": "Legal"
+    },
+    "noAnswer": "Respuesta no disponible",
+    "noFAQs": "Aún no hay preguntas frecuentes disponibles. Por favor, agregue FAQs en el CMS.",
+    "stillHaveQuestions": {
+      "title": "¿Todavía Tiene Preguntas?",
+      "description": "Estamos aquí para ayudar 24/7. Contáctenos directamente para asistencia personalizada.",
+      "callUs": "Llámenos Ahora",
+      "sendMessage": "Enviar un Mensaje"
+    }
   },
   "contact": {
     "title": "Contáctenos",
     "subtitle": "Estamos aquí para ayudar 24/7",
+    "formTitle": "Envíenos un Mensaje",
+    "contactInfoTitle": "Información de Contacto",
+    "callNowButton": "Llamar Ahora - Disponible 24/7",
     "form": {
       "name": "Nombre Completo",
       "email": "Correo Electrónico",
@@ -100,7 +187,15 @@
   "reviews": {
     "title": "Reseñas de Clientes",
     "subtitle": "Vea lo que nuestros clientes dicen sobre nosotros",
-    "rating": "Calificación"
+    "rating": "Calificación",
+    "featuredReviews": "Reseñas Destacadas",
+    "allReviews": "Todas las Reseñas",
+    "noReviews": "Aún no hay reseñas disponibles. Por favor, agregue reseñas en el CMS.",
+    "cta": {
+      "title": "Experimente Nuestro Servicio",
+      "description": "Únase a cientos de familias satisfechas. Contáctenos hoy para servicios profesionales de fianzas.",
+      "button": "Comenzar"
+    }
   },
   "common": {
     "loading": "Cargando...",
@@ -119,6 +214,7 @@
     "emergency": "Servicio de Emergencia 24/7 Disponible",
     "spanish": "SE HABLA ESPAÑOL",
     "serviceArea": "SIRVIENDO TODOS LOS CONDADOS DE CALIFORNIA",
-    "license": "LICENCIA #1843890"
+    "license": "LICENCIA #1843890",
+    "developedBy": "Sitio Web Desarrollado por Handy Dorceus"
   }
 }

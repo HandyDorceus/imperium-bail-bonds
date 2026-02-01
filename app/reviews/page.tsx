@@ -70,7 +70,7 @@ export default function ReviewsPage() {
         {featuredReviews.length > 0 && (
           <div className="mb-16">
             <h2 className="font-heading font-bold text-2xl mb-8 text-center text-primary-900">
-              Featured Reviews
+              {t('featuredReviews')}
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {featuredReviews.map((review: any) => (
@@ -100,7 +100,7 @@ export default function ReviewsPage() {
         {regularReviews.length > 0 && (
           <div className="max-w-5xl mx-auto">
             <h2 className="font-heading font-bold text-2xl mb-8 text-center text-primary-900">
-              All Reviews
+              {t('allReviews')}
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
               {regularReviews.map((review: any) => (
@@ -129,7 +129,7 @@ export default function ReviewsPage() {
         {reviews.length === 0 && (
           <div className="text-center py-12 bg-white rounded-lg border border-accent-500/20 shadow-elegant">
             <p className="text-trust-charcoal mb-4">
-              No reviews available yet. Please add reviews in the CMS.
+              {t('noReviews')}
             </p>
           </div>
         )}
@@ -138,16 +138,16 @@ export default function ReviewsPage() {
         <div className="max-w-4xl mx-auto mt-16 bg-gradient-to-br from-primary-900 to-trust-charcoal text-trust-cream rounded-lg p-8 text-center border border-accent-500/30 shadow-gold">
           <div className="w-16 h-0.5 bg-accent-500 mx-auto mb-4"></div>
           <h2 className="font-heading font-bold text-2xl mb-4">
-            Experience Our Service
+            {t('cta.title')}
           </h2>
           <p className="text-lg mb-6 text-trust-offWhite">
-            Join hundreds of satisfied families. Contact us today for professional bail bond services.
+            {t('cta.description')}
           </p>
           <a
             href="/contact"
             className="inline-block bg-accent-500 hover:bg-accent-600 text-primary-900 font-bold px-8 py-3 rounded-lg shadow-gold hover:shadow-xl transition-all"
           >
-            Get Started
+            {t('cta.button')}
           </a>
         </div>
       </div>

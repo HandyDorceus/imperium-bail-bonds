@@ -70,7 +70,7 @@ export default async function ServicesPage() {
                     )}
                     {service.features && service.features.length > 0 && (
                       <div className="mt-6 border-t border-accent-500/20 pt-6">
-                        <h3 className="font-heading font-semibold text-lg mb-3 text-accent-500">Key Features:</h3>
+                        <h3 className="font-heading font-semibold text-lg mb-3 text-accent-500">{t('keyFeatures')}</h3>
                         <ul className="space-y-2">
                           {service.features.map((feature: any, idx: number) => (
                             <li key={idx} className="flex items-start">
@@ -108,7 +108,7 @@ export default async function ServicesPage() {
         ) : (
           <div className="text-center py-12">
             <p className="text-trust-charcoal mb-4">
-              No services available yet. Please add services in the CMS.
+              {t('noServices')}
             </p>
           </div>
         )}
