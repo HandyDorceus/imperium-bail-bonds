@@ -52,6 +52,7 @@ const config: Config = {
         sans: ['var(--font-inter)', 'Inter', 'system-ui', 'sans-serif'],
         heading: ['var(--font-playfair)', 'Playfair Display', 'serif'],
         body: ['var(--font-inter)', 'Inter', 'system-ui', 'sans-serif'],
+        logo: ['var(--font-cinzel)', 'Cinzel', 'serif'],
       },
       boxShadow: {
         'trust': '0 4px 6px -1px rgba(201, 169, 97, 0.1), 0 2px 4px -1px rgba(201, 169, 97, 0.06)',

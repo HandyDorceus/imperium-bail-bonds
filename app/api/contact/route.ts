@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server'
 export async function POST(request: Request) {
   try {
     const body = await request.json()
-    const { name, email, phone, inmateLookup, howCanWeHelp, additionalInfo } = body
+    const { name, email, phone, inmateName, inmateDob, message } = body
 
     // For now, just log the data
     // In production, you would integrate with Resend or another email service
@@ -11,9 +11,9 @@ export async function POST(request: Request) {
       name,
       email,
       phone,
-      inmateLookup: inmateLookup || false,
-      howCanWeHelp,
-      additionalInfo
+      inmateName,
+      inmateDob,
+      message
     })
 
     // TODO: Integrate with Resend
@@ -22,16 +22,16 @@ export async function POST(request: Request) {
     // await resend.emails.send({
     //   from: 'onboarding@resend.dev',
     //   to: process.env.CONTACT_EMAIL || 'info@imperiumbailbonds.com',
-    //   subject: `New Contact Form Submission from ${name}${inmateLookup ? ' - Inmate Lookup Requested' : ''}`,
+    //   subject: `New Contact Form Submission from ${name}`,
     //   html: `
     //     <h2>New Contact Form Submission</h2>
     //     <p><strong>Name:</strong> ${name}</p>
     //     <p><strong>Email:</strong> ${email}</p>
     //     <p><strong>Phone:</strong> ${phone}</p>
-    //     <p><strong>Inmate Lookup Requested:</strong> ${inmateLookup ? 'Yes' : 'No'}</p>
-    //     <p><strong>How can we help:</strong></p>
-    //     <p>${howCanWeHelp}</p>
-    //     ${additionalInfo ? `<p><strong>Additional Information:</strong></p><p>${additionalInfo}</p>` : ''}
+    //     ${inmateName ? `<p><strong>Inmate Name:</strong> ${inmateName}</p>` : ''}
+    //     ${inmateDob ? `<p><strong>Inmate Date of Birth:</strong> ${inmateDob}</p>` : ''}
+    //     <p><strong>Message:</strong></p>
+    //     <p>${message}</p>
     //   `,
     // });
 

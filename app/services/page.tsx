@@ -1,4 +1,4 @@
-import { getTranslations } from 'next-intl/server'
+import { getTranslations, getLocale } from 'next-intl/server'
 import { client } from '@/sanity/lib/client'
 import { PortableText } from '@portabletext/react'
 
@@ -28,6 +28,7 @@ export const metadata = {
 
 export default async function ServicesPage() {
   const t = await getTranslations('services')
+  const locale = await getLocale()
   const services = await getServices()
 
   return (
@@ -58,14 +59,14 @@ export default async function ServicesPage() {
                 <div className="lg:w-1/2">
                   <div className="bg-white p-8 rounded-lg border border-accent-500/20 shadow-elegant hover:shadow-gold transition-all">
                     <h2 className="font-heading font-bold text-3xl mb-4 text-primary-900 border-b border-accent-500/30 pb-3">
-                      {service.title?.en || 'Service'}
+                      {service.title?.[locale] || service.title?.en || 'Service'}
                     </h2>
                     <p className="text-lg text-trust-charcoal mb-6">
-                      {service.description?.en || ''}
+                      {service.description?.[locale] || service.description?.en || ''}
                     </p>
-                    {service.content?.en && (
+                    {(service.content?.[locale] || service.content?.en) && (
                       <div className="prose max-w-none prose-headings:text-primary-900 prose-headings:font-heading prose-p:text-trust-charcoal prose-a:text-accent-500">
-                        <PortableText value={service.content.en} />
+                        <PortableText value={service.content[locale] || service.content.en} />
                       </div>
                     )}
                     {service.features && service.features.length > 0 && (
@@ -87,7 +88,7 @@ export default async function ServicesPage() {
                                   d="M5 13l4 4L19 7"
                                 />
                               </svg>
-                              <span className="text-trust-charcoal">{feature.en}</span>
+                              <span className="text-trust-charcoal">{feature[locale] || feature.en}</span>
                             </li>
                           ))}
                         </ul>
@@ -98,7 +99,7 @@ export default async function ServicesPage() {
                 <div className="lg:w-1/2">
                   <div className="aspect-video bg-gradient-to-br from-primary-900 to-trust-charcoal rounded-lg flex items-center justify-center border-2 border-accent-500/30 shadow-gold">
                     <div className="text-accent-500 text-6xl font-heading font-bold">
-                      {service.title?.en?.charAt(0) || 'S'}
+                      {(service.title?.[locale] || service.title?.en)?.charAt(0) || 'S'}
                     </div>
                   </div>
                 </div>

@@ -1,4 +1,5 @@
 import { useTranslations } from 'next-intl'
+import { getLocale } from 'next-intl/server'
 import Image from 'next/image'
 import CTAButton from '@/components/CTAButton'
 import CallButton from '@/components/CallButton'
@@ -23,6 +24,7 @@ async function getServices() {
 
 export default async function Home() {
   const services = await getServices()
+  const locale = await getLocale()
 
   return (
     <div>
@@ -39,7 +41,7 @@ export default async function Home() {
       <TrustSection />
 
       {/* Services Overview */}
-      <ServicesSection services={services} />
+      <ServicesSection services={services} locale={locale} />
 
       {/* CTA Section */}
       <CTASection />
@@ -247,7 +249,7 @@ function TrustSection() {
   )
 }
 
-function ServicesSection({ services }: { services: any[] }) {
+function ServicesSection({ services, locale }: { services: any[]; locale: string }) {
   const t = useTranslations('home.services')
   const common = useTranslations('common')
 
@@ -272,10 +274,10 @@ function ServicesSection({ services }: { services: any[] }) {
                 className="bg-trust-cream p-6 rounded-lg border border-accent-500/20 hover:border-accent-500 hover:shadow-gold transition-all"
               >
                 <h3 className="font-heading font-bold text-xl mb-3 text-primary-900">
-                  {service.title?.en || 'Service'}
+                  {service.title?.[locale] || service.title?.en || 'Service'}
                 </h3>
                 <p className="text-trust-charcoal mb-4">
-                  {service.description?.en || 'Service description'}
+                  {service.description?.[locale] || service.description?.en || 'Service description'}
                 </p>
                 <CTAButton href={`/services#${service.slug?.current}`} variant="secondary" size="sm">
                   {common('learnMore')}

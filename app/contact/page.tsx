@@ -1,6 +1,6 @@
 'use client'
 
-import { useTranslations } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
 import { useState, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -11,9 +11,9 @@ const contactSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
   email: z.string().email('Invalid email address'),
   phone: z.string().min(10, 'Phone number must be at least 10 digits'),
-  inmateLookup: z.boolean().optional(),
-  howCanWeHelp: z.string().min(10, 'Please tell us how we can help (at least 10 characters)'),
-  additionalInfo: z.string().optional(),
+  inmateName: z.string().optional(),
+  inmateDob: z.string().optional(),
+  message: z.string().min(10, 'Please tell us how we can help (at least 10 characters)'),
 })
 
 type ContactFormData = z.infer<typeof contactSchema>
@@ -21,6 +21,7 @@ type ContactFormData = z.infer<typeof contactSchema>
 export default function ContactPage() {
   const t = useTranslations('contact')
   const business = useTranslations('businessInfo')
+  const locale = useLocale()
   const [contactInfo, setContactInfo] = useState<any>(null)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
 
@@ -99,7 +100,7 @@ export default function ContactPage() {
         {contactInfo?.emergencyMessage && (
           <div className="max-w-4xl mx-auto mb-8 bg-accent-50 border-l-4 border-accent-500 p-4 rounded shadow-elegant">
             <p className="font-semibold text-primary-900">
-              {contactInfo.emergencyMessage.en || contactInfo.emergencyMessage}
+              {contactInfo.emergencyMessage[locale] || contactInfo.emergencyMessage.en || contactInfo.emergencyMessage}
             </p>
           </div>
         )}
@@ -157,49 +158,43 @@ export default function ContactPage() {
                 )}
               </div>
 
-              <div className="flex items-start">
+              <div>
+                <label htmlFor="inmateName" className="block text-sm font-medium text-primary-900 mb-2">
+                  {t('form.inmateName')}
+                </label>
                 <input
-                  {...register('inmateLookup')}
-                  type="checkbox"
-                  id="inmateLookup"
-                  className="mt-1 h-5 w-5 text-accent-500 border-accent-500/30 rounded focus:ring-2 focus:ring-accent-500"
+                  {...register('inmateName')}
+                  type="text"
+                  id="inmateName"
+                  className="w-full px-4 py-2 border border-accent-500/30 rounded-lg focus:ring-2 focus:ring-accent-500 focus:border-accent-500 transition-all"
                 />
-                <div className="ml-3">
-                  <label htmlFor="inmateLookup" className="block text-sm font-medium text-primary-900 cursor-pointer">
-                    {t('form.inmateLookup')}
-                  </label>
-                  <p className="text-xs text-trust-charcoal mt-1">{t('form.inmateLookupHelper')}</p>
-                </div>
               </div>
 
               <div>
-                <label htmlFor="howCanWeHelp" className="block text-sm font-medium text-primary-900 mb-2">
-                  {t('form.howCanWeHelp')} *
+                <label htmlFor="inmateDob" className="block text-sm font-medium text-primary-900 mb-2">
+                  {t('form.inmateDob')}
                 </label>
-                <textarea
-                  {...register('howCanWeHelp')}
-                  id="howCanWeHelp"
-                  rows={4}
+                <input
+                  {...register('inmateDob')}
+                  type="date"
+                  id="inmateDob"
                   className="w-full px-4 py-2 border border-accent-500/30 rounded-lg focus:ring-2 focus:ring-accent-500 focus:border-accent-500 transition-all"
-                ></textarea>
-                {errors.howCanWeHelp && (
-                  <p className="mt-1 text-sm text-red-600">{errors.howCanWeHelp.message}</p>
-                )}
+                />
               </div>
 
               <div>
-                <label htmlFor="additionalInfo" className="block text-sm font-medium text-primary-900 mb-2">
-                  {t('form.additionalInfo')}
+                <label htmlFor="message" className="block text-sm font-medium text-primary-900 mb-2">
+                  {t('form.message')} *
                 </label>
                 <textarea
-                  {...register('additionalInfo')}
-                  id="additionalInfo"
+                  {...register('message')}
+                  id="message"
                   rows={5}
-                  placeholder={t('form.additionalInfoPlaceholder')}
+                  placeholder={t('form.messagePlaceholder')}
                   className="w-full px-4 py-2 border border-accent-500/30 rounded-lg focus:ring-2 focus:ring-accent-500 focus:border-accent-500 transition-all"
                 ></textarea>
-                {errors.additionalInfo && (
-                  <p className="mt-1 text-sm text-red-600">{errors.additionalInfo.message}</p>
+                {errors.message && (
+                  <p className="mt-1 text-sm text-red-600">{errors.message.message}</p>
                 )}
               </div>
 
@@ -281,7 +276,7 @@ export default function ContactPage() {
                     <div>
                       <p className="font-semibold mb-1">{t('info.hours')}</p>
                       <p className="text-trust-lightGray whitespace-pre-line">
-                        {contactInfo.hours.en || contactInfo.hours}
+                        {contactInfo.hours[locale] || contactInfo.hours.en || contactInfo.hours}
                       </p>
                     </div>
                   </div>

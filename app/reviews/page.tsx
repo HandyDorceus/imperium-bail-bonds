@@ -1,11 +1,12 @@
 'use client'
 
-import { useTranslations } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
 import { useState, useEffect } from 'react'
 import { client } from '@/sanity/lib/client'
 
 export default function ReviewsPage() {
   const t = useTranslations('reviews')
+  const locale = useLocale()
   const [reviews, setReviews] = useState<any[]>([])
 
   useEffect(() => {
@@ -85,7 +86,7 @@ export default function ReviewsPage() {
                     </span>
                   </div>
                   <p className="text-trust-charcoal mb-4 italic">
-                    "{review.review?.en || review.review}"
+                    "{review.review?.[locale] || review.review?.en || review.review}"
                   </p>
                   <p className="font-heading font-semibold text-primary-900">
                     - {review.customerName}
@@ -115,7 +116,7 @@ export default function ReviewsPage() {
                     </span>
                   </div>
                   <p className="text-trust-charcoal mb-3">
-                    "{review.review?.en || review.review}"
+                    "{review.review?.[locale] || review.review?.en || review.review}"
                   </p>
                   <p className="font-heading font-semibold text-primary-900">
                     - {review.customerName}

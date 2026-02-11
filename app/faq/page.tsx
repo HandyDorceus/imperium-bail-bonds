@@ -1,6 +1,6 @@
 'use client'
 
-import { useTranslations } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
 import { useState, useEffect } from 'react'
 import { client } from '@/sanity/lib/client'
 import { PortableText } from '@portabletext/react'
@@ -8,6 +8,7 @@ import { PortableText } from '@portabletext/react'
 export default function FAQPage() {
   const t = useTranslations('faq')
   const business = useTranslations('businessInfo')
+  const locale = useLocale()
   const [faqs, setFaqs] = useState<any[]>([])
   const [selectedCategory, setSelectedCategory] = useState('all')
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null)
@@ -82,7 +83,7 @@ export default function FAQPage() {
                     className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-trust-offWhite transition-colors"
                   >
                     <span className="font-heading font-semibold text-lg text-primary-900 pr-4">
-                      {faq.question?.en || 'Question'}
+                      {faq.question?.[locale] || faq.question?.en || 'Question'}
                     </span>
                     <svg
                       className={`w-6 h-6 text-accent-500 flex-shrink-0 transition-transform ${
@@ -102,9 +103,9 @@ export default function FAQPage() {
                   </button>
                   {expandedIndex === index && (
                     <div className="px-6 pb-6 text-trust-charcoal border-t border-accent-500/20">
-                      {faq.answer?.en ? (
+                      {(faq.answer?.[locale] || faq.answer?.en) ? (
                         <div className="prose max-w-none mt-4 prose-headings:text-primary-900 prose-headings:font-heading prose-p:text-trust-charcoal prose-a:text-accent-500">
-                          <PortableText value={faq.answer.en} />
+                          <PortableText value={faq.answer[locale] || faq.answer.en} />
                         </div>
                       ) : (
                         <p className="mt-4">{t('noAnswer')}</p>

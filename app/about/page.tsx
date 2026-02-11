@@ -58,50 +58,6 @@ export default async function AboutPage() {
             </div>
           </div>
 
-          {/* Team Section */}
-          <div className="bg-white rounded-lg border border-accent-500/20 shadow-elegant p-8 md:p-12 mb-12">
-            <h2 className="font-heading font-bold text-3xl mb-8 text-center text-primary-900 border-b border-accent-500/30 pb-3">
-              {t('team.title')}
-            </h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              {/* CEO */}
-              <div className="bg-trust-offWhite p-6 rounded-lg border border-accent-500/20 hover:shadow-gold transition-all">
-                <div className="flex flex-col items-center text-center mb-4">
-                  <div className="w-32 h-32 bg-gradient-to-br from-primary-900 to-accent-500 rounded-full flex items-center justify-center mb-4 border-4 border-accent-500/30">
-                    <span className="text-5xl font-heading font-bold text-trust-cream">L</span>
-                  </div>
-                  <h3 className="font-heading font-bold text-2xl text-primary-900 mb-1">
-                    {t('team.ceo.name')}
-                  </h3>
-                  <p className="text-accent-500 font-semibold mb-4">
-                    {t('team.ceo.title')}
-                  </p>
-                </div>
-                <p className="text-trust-charcoal leading-relaxed">
-                  {t('team.ceo.bio')}
-                </p>
-              </div>
-
-              {/* COO */}
-              <div className="bg-trust-offWhite p-6 rounded-lg border border-accent-500/20 hover:shadow-gold transition-all">
-                <div className="flex flex-col items-center text-center mb-4">
-                  <div className="w-32 h-32 bg-gradient-to-br from-primary-900 to-accent-500 rounded-full flex items-center justify-center mb-4 border-4 border-accent-500/30">
-                    <span className="text-5xl font-heading font-bold text-trust-cream">A</span>
-                  </div>
-                  <h3 className="font-heading font-bold text-2xl text-primary-900 mb-1">
-                    {t('team.coo.name')}
-                  </h3>
-                  <p className="text-accent-500 font-semibold mb-4">
-                    {t('team.coo.title')}
-                  </p>
-                </div>
-                <p className="text-trust-charcoal leading-relaxed">
-                  {t('team.coo.bio')}
-                </p>
-              </div>
-            </div>
-          </div>
-
           <div className="bg-trust-offWhite rounded-lg border border-accent-500/20 p-8 md:p-12 mb-12">
             <h2 className="font-heading font-bold text-3xl mb-6 text-primary-900 border-b border-accent-500/30 pb-3">
               {t('values.title')}

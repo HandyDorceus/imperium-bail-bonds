@@ -4,13 +4,13 @@ import Link from 'next/link'
 import { useTranslations } from 'next-intl'
 import { useState } from 'react'
 import LanguageSwitcher from './LanguageSwitcher'
+import Logo from './Logo'
 
 export default function Header() {
   const t = useTranslations('navigation')
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   const navigation = [
-    { name: t('home'), href: '/' },
     { name: t('services'), href: '/services' },
     { name: t('about'), href: '/about' },
     { name: t('faq'), href: '/faq' },
@@ -23,13 +23,8 @@ export default function Header() {
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-accent-500 rounded-lg flex items-center justify-center font-bold text-2xl text-primary-900 shadow-gold">
-              I
-            </div>
-            <span className="font-heading font-bold text-xl hidden sm:inline text-trust-cream">
-              Imperium Bail Bonds
-            </span>
+          <Link href="/" className="block">
+            <Logo variant="header" />
           </Link>
 
           {/* Desktop Navigation */}

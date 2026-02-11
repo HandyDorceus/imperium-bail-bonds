@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { useTranslations } from 'next-intl'
+import Logo from './Logo'
 
 export default function Footer() {
   const t = useTranslations('footer')
@@ -11,25 +12,11 @@ export default function Footer() {
   return (
     <footer className="bg-primary-900 text-trust-cream border-t-2 border-accent-500">
       <div className="container mx-auto px-4 py-12">
-        {/* Top Badge Section */}
-        <div className="text-center mb-8">
-          <div className="inline-block bg-accent-500 text-primary-900 px-6 py-3 rounded-lg font-bold text-lg shadow-gold">
-            {t('emergency')}
-          </div>
-        </div>
-
-        <div className="divider-gold mb-8"></div>
-
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Company Info */}
           <div>
-            <div className="flex items-center space-x-3 mb-4">
-              <div className="w-10 h-10 bg-accent-500 rounded-lg flex items-center justify-center font-bold text-2xl text-primary-900 shadow-gold">
-                I
-              </div>
-              <span className="font-heading font-bold text-xl text-accent-500">
-                Imperium Bail Bonds
-              </span>
+            <div className="mb-4 w-fit">
+              <Logo variant="footer" />
             </div>
             <p className="text-trust-lightGray mb-4">{t('tagline')}</p>
             <div className="space-y-2 text-sm">
