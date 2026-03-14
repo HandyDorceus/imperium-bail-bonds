@@ -68,7 +68,7 @@
   "services": {
     "title": "Nuestros Servicios",
     "subtitle": "Servicios profesionales de fianzas adaptados a sus necesidades",
-    "noServices": "Aún no hay servicios disponibles. Por favor, agregue servicios en el CMS.",
+    "noServices": "La información de servicios estará disponible pronto.",
     "keyFeatures": "Características Clave:"
   },
   "about": {
@@ -148,7 +148,7 @@
       "legal": "Legal"
     },
     "noAnswer": "Respuesta no disponible",
-    "noFAQs": "Aún no hay preguntas frecuentes disponibles. Por favor, agregue FAQs en el CMS.",
+    "noFAQs": "La información de preguntas frecuentes estará disponible pronto.",
     "stillHaveQuestions": {
       "title": "¿Todavía Tiene Preguntas?",
       "description": "Estamos aquí para ayudar 24/7. Contáctenos directamente para asistencia personalizada.",
@@ -188,7 +188,7 @@
     "rating": "Calificación",
     "featuredReviews": "Reseñas Destacadas",
     "allReviews": "Todas las Reseñas",
-    "noReviews": "Aún no hay reseñas disponibles. Por favor, agregue reseñas en el CMS.",
+    "noReviews": "Las reseñas de clientes estarán disponibles pronto.",
     "cta": {
       "title": "Experimente Nuestro Servicio",
       "description": "Únase a cientos de familias satisfechas. Contáctenos hoy para servicios profesionales de fianzas.",
