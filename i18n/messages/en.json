@@ -68,7 +68,7 @@
   "services": {
     "title": "Our Services",
     "subtitle": "Professional bail bond services tailored to your needs",
-    "noServices": "No services available yet. Please add services in the CMS.",
+    "noServices": "Services information will be available soon.",
     "keyFeatures": "Key Features:"
   },
   "about": {
@@ -148,7 +148,7 @@
       "legal": "Legal"
     },
     "noAnswer": "Answer not available",
-    "noFAQs": "No FAQs available yet. Please add FAQs in the CMS.",
+    "noFAQs": "FAQ information will be available soon.",
     "stillHaveQuestions": {
       "title": "Still Have Questions?",
       "description": "We're here to help 24/7. Contact us directly for personalized assistance.",
@@ -188,7 +188,7 @@
     "rating": "Rating",
     "featuredReviews": "Featured Reviews",
     "allReviews": "All Reviews",
-    "noReviews": "No reviews available yet. Please add reviews in the CMS.",
+    "noReviews": "Customer reviews will be available soon.",
     "cta": {
       "title": "Experience Our Service",
       "description": "Join hundreds of satisfied families. Contact us today for professional bail bond services.",

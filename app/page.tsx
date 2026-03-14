@@ -251,6 +251,7 @@ function TrustSection() {
 
 function ServicesSection({ services, locale }: { services: any[]; locale: string }) {
   const t = useTranslations('home.services')
+  const servicesT = useTranslations('services')
   const common = useTranslations('common')
 
   return (
@@ -287,12 +288,9 @@ function ServicesSection({ services, locale }: { services: any[]; locale: string
           </div>
         ) : (
           <div className="text-center py-12">
-            <p className="text-trust-charcoal mb-4">
-              Services content coming soon. Please add services in the CMS.
+            <p className="text-trust-charcoal">
+              {servicesT('noServices')}
             </p>
-            <CTAButton href="/studio" variant="primary">
-              Go to CMS
-            </CTAButton>
           </div>
         )}
 
