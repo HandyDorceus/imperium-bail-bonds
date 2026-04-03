@@ -540,7 +540,6 @@ Imperium Bail Bonds offers several discount programs to help make bail bonds mor
 - **AARP Members:** Senior discounts available
 
 **Additional Savings:**
-- Referral discounts
 - Payment plan options
 - No hidden fees or charges
 

@@ -41,7 +41,7 @@ This document tracks all FAQ changes implemented based on detailed client feedba
 **Change:** Added "Law enforcement" and "Senior citizens" to discount list
 
 **Updated Content (English):**
-> Imperium Bail Bonds offers several discount programs: Military Personnel (active duty and veterans), Union Members, Law enforcement, Senior citizens, Private Attorney representation, Homeowners, and AARP Members. We also offer referral discounts, payment plan options, and no hidden fees.
+> Imperium Bail Bonds offers several discount programs: Military Personnel (active duty and veterans), Union Members, Law enforcement, Senior citizens, Private Attorney representation, Homeowners, and AARP Members. We offer payment plan options, and no hidden fees.
 
 **Spanish Translation Included:** ✅
 

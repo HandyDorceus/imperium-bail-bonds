@@ -813,7 +813,7 @@ const faqs = [
         {
           _type: 'block',
           style: 'normal',
-          children: [{ _type: 'span', text: 'Imperium Bail Bonds offers several discount programs: Military Personnel (active duty and veterans), Union Members, Private Attorney representation, Homeowners, and AARP Members. We also offer referral discounts, payment plan options, and no hidden fees.' }]
+          children: [{ _type: 'span', text: 'Imperium Bail Bonds offers several discount programs: Military Personnel (active duty and veterans), Union Members, Private Attorney representation, Homeowners, and AARP Members. We offer payment plan options, and no hidden fees.' }]
         },
         {
           _type: 'block',
@@ -825,7 +825,7 @@ const faqs = [
         {
           _type: 'block',
           style: 'normal',
-          children: [{ _type: 'span', text: 'Imperium Bail Bonds ofrece varios programas de descuento: Personal Militar (en servicio activo y veteranos), Miembros de Sindicatos, representación de Abogado Privado, Propietarios de Vivienda, y Miembros de AARP. También ofrecemos descuentos por referencia, opciones de planes de pago, y sin tarifas ocultas.' }]
+          children: [{ _type: 'span', text: 'Imperium Bail Bonds ofrece varios programas de descuento: Personal Militar (en servicio activo y veteranos), Miembros de Sindicatos, representación de Abogado Privado, Propietarios de Vivienda, y Miembros de AARP. Ofrecemos opciones de planes de pago, y sin tarifas ocultas.' }]
         },
         {
           _type: 'block',
