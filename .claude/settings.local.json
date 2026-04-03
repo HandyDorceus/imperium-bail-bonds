@@ -13,7 +13,9 @@
       "Bash(lsof:*)",
       "Bash(xargs kill:*)",
       "Bash(node scripts/add-example-service.js:*)",
-      "Bash(node scripts/import-faqs.js:*)"
+      "Bash(node scripts/import-faqs.js:*)",
+      "Bash(cat:*)",
+      "Bash(git push:*)"
     ]
   }
 }
