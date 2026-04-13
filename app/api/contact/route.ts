@@ -30,7 +30,7 @@ export async function POST(request: Request) {
 
     // Send email via Resend
     const emailData = await resend.emails.send({
-      from: 'Imperium Bail Bonds <onboarding@resend.dev>',
+      from: 'Imperium Bail Bonds <info@imperiumbailbonds.com>',
       to: process.env.CONTACT_EMAIL || 'info@imperiumbailbonds.com',
       subject: `New Contact Form Submission from ${name}`,
       html: `
