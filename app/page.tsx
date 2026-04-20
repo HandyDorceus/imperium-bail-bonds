@@ -272,7 +272,9 @@ function ServicesSection({ services, locale }: { services: any[]; locale: string
             {services.slice(0, 6).map((service: any) => (
               <div
                 key={service._id}
-                className="bg-trust-cream p-6 rounded-lg border border-accent-500/20 hover:border-accent-500 hover:shadow-gold transition-all"
+                className={`bg-trust-cream p-6 rounded-lg border border-accent-500/20 hover:border-accent-500 hover:shadow-gold transition-all ${
+                  services.length === 1 ? 'lg:col-start-2' : ''
+                }`}
               >
                 <h3 className="font-heading font-bold text-xl mb-3 text-primary-900">
                   {service.title?.[locale] || service.title?.en || 'Service'}

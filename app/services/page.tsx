@@ -52,56 +52,45 @@ export default async function ServicesPage() {
               <div
                 key={service._id}
                 id={service.slug?.current}
-                className={`flex flex-col lg:flex-row gap-8 items-center ${
-                  index % 2 === 1 ? 'lg:flex-row-reverse' : ''
-                }`}
+                className="max-w-3xl mx-auto"
               >
-                <div className="lg:w-1/2">
-                  <div className="bg-white p-8 rounded-lg border border-accent-500/20 shadow-elegant hover:shadow-gold transition-all">
-                    <h2 className="font-heading font-bold text-3xl mb-4 text-primary-900 border-b border-accent-500/30 pb-3">
-                      {service.title?.[locale] || service.title?.en || 'Service'}
-                    </h2>
-                    <p className="text-lg text-trust-charcoal mb-6">
-                      {service.description?.[locale] || service.description?.en || ''}
-                    </p>
-                    {(service.content?.[locale] || service.content?.en) && (
-                      <div className="prose max-w-none prose-headings:text-primary-900 prose-headings:font-heading prose-p:text-trust-charcoal prose-a:text-accent-500">
-                        <PortableText value={service.content[locale] || service.content.en} />
-                      </div>
-                    )}
-                    {service.features && service.features.length > 0 && (
-                      <div className="mt-6 border-t border-accent-500/20 pt-6">
-                        <h3 className="font-heading font-semibold text-lg mb-3 text-accent-500">{t('keyFeatures')}</h3>
-                        <ul className="space-y-2">
-                          {service.features.map((feature: any, idx: number) => (
-                            <li key={idx} className="flex items-start">
-                              <svg
-                                className="w-5 h-5 text-accent-500 mr-2 mt-0.5 flex-shrink-0"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                              >
-                                <path
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  strokeWidth="2"
-                                  d="M5 13l4 4L19 7"
-                                />
-                              </svg>
-                              <span className="text-trust-charcoal">{feature[locale] || feature.en}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-                  </div>
-                </div>
-                <div className="lg:w-1/2">
-                  <div className="aspect-video bg-gradient-to-br from-primary-900 to-trust-charcoal rounded-lg flex items-center justify-center border-2 border-accent-500/30 shadow-gold">
-                    <div className="text-accent-500 text-6xl font-heading font-bold">
-                      {(service.title?.[locale] || service.title?.en)?.charAt(0) || 'S'}
+                <div className="bg-white p-8 rounded-lg border border-accent-500/20 shadow-elegant hover:shadow-gold transition-all">
+                  <h2 className="font-heading font-bold text-3xl mb-4 text-primary-900 border-b border-accent-500/30 pb-3">
+                    {service.title?.[locale] || service.title?.en || 'Service'}
+                  </h2>
+                  <p className="text-lg text-trust-charcoal mb-6">
+                    {service.description?.[locale] || service.description?.en || ''}
+                  </p>
+                  {(service.content?.[locale] || service.content?.en) && (
+                    <div className="prose max-w-none prose-headings:text-primary-900 prose-headings:font-heading prose-p:text-trust-charcoal prose-a:text-accent-500">
+                      <PortableText value={service.content[locale] || service.content.en} />
                     </div>
-                  </div>
+                  )}
+                  {service.features && service.features.length > 0 && (
+                    <div className="mt-6 border-t border-accent-500/20 pt-6">
+                      <h3 className="font-heading font-semibold text-lg mb-3 text-accent-500">{t('keyFeatures')}</h3>
+                      <ul className="space-y-2">
+                        {service.features.map((feature: any, idx: number) => (
+                          <li key={idx} className="flex items-start">
+                            <svg
+                              className="w-5 h-5 text-accent-500 mr-2 mt-0.5 flex-shrink-0"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth="2"
+                                d="M5 13l4 4L19 7"
+                              />
+                            </svg>
+                            <span className="text-trust-charcoal">{feature[locale] || feature.en}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                 </div>
               </div>
             ))}

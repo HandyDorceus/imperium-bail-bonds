@@ -15,7 +15,8 @@
       "Bash(node scripts/add-example-service.js:*)",
       "Bash(node scripts/import-faqs.js:*)",
       "Bash(cat:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(brew upgrade:*)"
     ]
   }
 }
